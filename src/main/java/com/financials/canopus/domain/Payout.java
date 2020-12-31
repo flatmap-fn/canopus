@@ -1,6 +1,8 @@
 package com.financials.canopus.domain;
 
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.PrePersist;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.financials.canopus.domain.views.CreatePayoutRequest;
@@ -21,6 +23,7 @@ public class Payout extends Domain {
 
     private String statementDescriptor;
 
+    @Enumerated(EnumType.STRING)
     private PayoutStatus status = PayoutStatus.in_transit;
 
     private String originalPayout;

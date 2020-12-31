@@ -1,6 +1,8 @@
 package com.financials.canopus.domain;
 
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.PrePersist;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.financials.canopus.domain.views.CreateProductRequest;
@@ -24,6 +26,7 @@ public class Refund extends Domain {
 
     private String reason;
 
+    @Enumerated (EnumType.STRING)
     private RefundStatus status;
 
     public static Refund fromRequest(CreateRefundRequest request) {
