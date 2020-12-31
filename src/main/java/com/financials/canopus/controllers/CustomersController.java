@@ -38,7 +38,7 @@ public class CustomersController {
 
     @ApiOperation(value = "Retrieve the details of a customer")
     @GetMapping ("/customers/{id}")
-    public @ResponseBody Customer getPayment(@PathVariable String id) {
+    public @ResponseBody Customer getCustomer(@PathVariable String id) {
         return customerRepository.findByExternalId(id);
     }
 
